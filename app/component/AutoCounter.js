@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 
 const AutoCounter = ({ startValue }) => {
   const [count, setCount] = useState(1);
-  const [stoper, setStoper] = useState(startValue);
+  // const [stoper, setStoper] = useState(startValue);
 
   useEffect(() => {
     // Set up an interval to update the count every second (1000ms)
     const interval = setInterval(() => {
       setCount((prevCount) => {
-        if (prevCount < stoper) {
+        if (prevCount < startValue) {
           return prevCount + 1;
         } else {
           clearInterval(interval);
